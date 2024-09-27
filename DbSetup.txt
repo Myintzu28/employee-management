@@ -1,0 +1,15 @@
+Write below comment to setup database
+-------------------------------------------
+-> Enter MySQL with a root user
+-> create database employee_db;
+-> use employee_db;
+-> create user 'employee_usr'@'localhost' identified by 'employee_pwd';
+-> grant all privileges on employee_db.* to 'employee_usr'@'localhost';
+-> exit (from root user)
+-> mysql -u employee_usr -pemployee_pwd employee_db;
+
+for signin
+
+
+username = "admin"
+password = "adminpass"

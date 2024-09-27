@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "f5406bab-d085-4bcf-bb3f-1f33b836d608",
+		"name": "EmployeeManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32538060"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "create-department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"FED\",\r\n    \"name\": \"Frontend Department\",\r\n    \"description\": \"Frontend Department\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/department",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-department",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Frontend Department\",\r\n    \"description\": \"Frontend Department including UI/UX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/department/FED",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"department",
+								"FED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findbyid-department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{appUrl}}/department/FED",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"department",
+								"FED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-manager",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"headCode\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/department/FED/manager",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"department",
+								"FED",
+								"manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-department",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department\": \"FED\",\r\n    \"head\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/department",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"department"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "create-employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"James\",\r\n    \"department\": \"FED\",\r\n    \"phone\": \"09889898989\",\r\n    \"email\": \"james@gmail.com\",\r\n    \"gender\": \"Male\",\r\n    \"dob\": \"2003-09-22\",\r\n    \"assignDate\": \"2024-05-02\",\r\n    \"status\": \"Probation\",\r\n    \"remark\": \"He is a talent developer.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/employee",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findbyid-employee",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{appUrl}}/employee/FED-0001",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"employee",
+								"FED-0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-employee",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"James\",\r\n    \"phone\": \"09889898989\",\r\n    \"email\": \"jamessasori@gmail.com\",\r\n    \"gender\": \"Male\",\r\n    \"dob\": \"2003-09-22\",\r\n    \"assignDate\": \"2024-05-02\",\r\n    \"remark\": \"He is a talent developer.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/employee/FED-0001",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"employee",
+								"FED-0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-employee-status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Permenant\"\r\n}"
+						},
+						"url": {
+							"raw": "{{appUrl}}/employee/FED-0001/status",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"employee",
+								"FED-0001",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"from\": \"2024-05-02\",\r\n    // \"to\": \"2024-05-02\",\r\n    // \"department\": \"FED\",\r\n    \"name\": \"James\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{appUrl}}/employee",
+							"host": [
+								"{{appUrl}}"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.json().success){\r",
+							"    pm.collectionVariables.set(\"token\", pm.response.json().payload.token)\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminpass\"\r\n}\r\n\r\n// {\r\n//     \"username\": \"FED-0001\",\r\n//     \"password\": \"123456\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appUrl}}/public/signin",
+					"host": [
+						"{{appUrl}}"
+					],
+					"path": [
+						"public",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "appUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
