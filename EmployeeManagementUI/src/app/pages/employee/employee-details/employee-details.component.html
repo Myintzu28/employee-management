@@ -1,0 +1,27 @@
+<div class="mb-3">
+  <a [routerLink]="['/employee']" class="icon-link me-3">Emplyee</a>
+  <a [routerLink]="['/department']" class="icon-link">Department</a>
+</div>
+
+<app-page-title icon="bi-person" [title]="title()"> </app-page-title>
+
+<a
+  [routerLink]="['../', 'edit']"
+  [queryParams]="{ code: code() }"
+  class="btn btn-outline-danger"
+>
+  <i class="bi-pencil"></i> Edit Employee
+</a>
+
+<table class="table table-bordered mt-3">
+  <tbody>
+    <tr *ngFor="let item of info() | keyvalue; let i = index">
+      <th class="info-header">
+        {{ item.key }}
+      </th>
+      <td>
+        {{ item.value }}
+      </td>
+    </tr>
+  </tbody>
+</table>
